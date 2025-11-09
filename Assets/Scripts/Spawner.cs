@@ -76,8 +76,7 @@ public class Spawner : MonoBehaviour
     private void ConfigureEnemy(Enemy enemy)
     {
         SpawnPoint spawnPoint = GetRandomPointPosition();
-        enemy.transform.position = spawnPoint.GetPoint();
-        enemy.transform.rotation = spawnPoint.GetRotation();
+        enemy.Initialize(spawnPoint.GetPoint(), spawnPoint.GetRotation());
         enemy.Move(spawnPoint.GetDirection());
     }
 
